@@ -25,7 +25,7 @@ class StudentClass extends ObjectModel
 
     public function getAll()
     {
-        $sql = 'SELECT name FROM `' . _DB_PREFIX_ . self::$definition['table'] . '`';
+        $sql = 'SELECT name, bdate, status, avgscore FROM `' . _DB_PREFIX_ . self::$definition['table'] . '`';
         return Db::getInstance()->executeS($sql);
     }
 
