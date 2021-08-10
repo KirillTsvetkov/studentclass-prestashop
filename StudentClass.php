@@ -25,7 +25,7 @@ class StudentClass extends ObjectModel
 
     public function getAll()
     {
-        $sql = 'SELECT name, bdate, status, avgscore FROM `' . _DB_PREFIX_ . self::$definition['table'] . '`';
+        $sql = 'SELECT  bdate, status, avgscore, student_lang.name FROM `' . _DB_PREFIX_ . self::$definition['table'] . '` s join `' . _DB_PREFIX_ . self::$definition['table'] . '_lang` l on s.id_student=l.id_student;
         return Db::getInstance()->executeS($sql);
     }
 
