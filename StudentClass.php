@@ -2,8 +2,6 @@
 
 class StudentClass extends ObjectModel
 {
-    public $id;
-
     public $name;
 
     public $bdate;
@@ -17,7 +15,7 @@ class StudentClass extends ObjectModel
         'primary' => 'id_student',
         'multilang' => true,
         'fields' => array(
-            'name' => array('type' => self::TYPE_STRING, 'validate' => 'isString'),
+            'name' => array('type' => self::TYPE_STRING, 'validate' => 'isString', 'lang' => TRUE),
             'bdate' => array('type' => self::TYPE_DATE),
             'status' => array('type' => self::TYPE_BOOL),
             'avgscore' => array ('type' => self::TYPE_FLOAT)
